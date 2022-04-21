@@ -1,0 +1,1 @@
+export const CONFIG_PRESENCE = 'CONFIG_PRESENCE';
