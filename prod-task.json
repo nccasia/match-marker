@@ -1,0 +1,152 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": "arn:aws:iam::332371708913:role/AmazonElasticContainerService",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "environmentFiles": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/prod-rtb-backend",
+          "awslogs-region": "ap-southeast-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [],
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "secrets": [
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:AWS_ACCESS_KEY::",
+          "name": "AWS_ACCESS_KEY"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:AWS_REGION::",
+          "name": "AWS_REGION"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:AWS_S3_BUCKET::",
+          "name": "AWS_S3_BUCKET"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:AWS_SECRET_KEY::",
+          "name": "AWS_SECRET_KEY"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:JWT_EXPIRE::",
+          "name": "JWT_EXPIRE"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:JWT_REFRESH_EXPIRE::",
+          "name": "JWT_REFRESH_EXPIRE"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:JWT_SECRET::",
+          "name": "JWT_SECRET"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:MAIL_FROM::",
+          "name": "MAIL_FROM"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:MAIL_SUBJECT::",
+          "name": "MAIL_SUBJECT"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-rds-qxFxu0:dbname::",
+          "name": "PG_DATABASE"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-rds-qxFxu0:host::",
+          "name": "PG_HOST"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-rds-qxFxu0:password::",
+          "name": "PG_PASSWORD"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-rds-qxFxu0:port::",
+          "name": "PG_PORT"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-rds-qxFxu0:username::",
+          "name": "PG_USER"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:PORT::",
+          "name": "PORT"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:S3_CDN::",
+          "name": "S3_CDN"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:STRIPE_APIKEY::",
+          "name": "STRIPE_APIKEY"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:WEB_APP_URL::",
+          "name": "WEB_APP_URL"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-2:332371708913:secret:prod-rtb-secret-QaKf4d:SENDGRID_API_KEY::",
+          "name": "SENDGRID_API_KEY"
+        }
+      ],
+      "dockerSecurityOptions": null,
+      "memory": null,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "332371708913.dkr.ecr.ap-southeast-2.amazonaws.com/prod-rtb-backend:latest",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "prod-rtb-backend"
+    }
+  ],
+  "memory": "2048",
+  "taskRoleArn": "arn:aws:iam::332371708913:role/AmazonElasticContainerService",
+  "family": "prod-rtb-backend",
+  "pidMode": null,
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX",
+    "cpuArchitecture": null
+  },
+  "cpu": "1024",
+  "inferenceAccelerators": null,
+  "proxyConfiguration": null,
+  "volumes": [],
+  "tags": []
+}

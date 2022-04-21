@@ -1,0 +1,204 @@
+{
+  "ipcMode": null,
+  "executionRoleArn": "arn:aws:iam::332371708913:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "dnsSearchDomains": null,
+      "environmentFiles": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/stage-rtb-backend",
+          "awslogs-region": "ap-southeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "entryPoint": null,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "command": null,
+      "linuxParameters": null,
+      "cpu": 0,
+      "environment": [],
+      "resourceRequirements": null,
+      "ulimits": null,
+      "dnsServers": null,
+      "mountPoints": [],
+      "workingDirectory": null,
+      "secrets": [
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:AWS_ACCESS_KEY::",
+          "name": "AWS_ACCESS_KEY"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:AWS_S3_BUCKET::",
+          "name": "AWS_S3_BUCKET"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:AWS_REGION::",
+          "name": "AWS_REGION"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:AWS_SECRET_KEY::",
+          "name": "AWS_SECRET_KEY"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:JWT_EXPIRE::",
+          "name": "JWT_EXPIRE"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:JWT_REFRESH_EXPIRE::",
+          "name": "JWT_REFRESH_EXPIRE"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:JWT_SECRET::",
+          "name": "JWT_SECRET"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:MAIL_FROM::",
+          "name": "MAIL_FROM"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:MAIL_SUBJECT::",
+          "name": "MAIL_SUBJECT"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-rds-jgl740:database::",
+          "name": "PG_DATABASE"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-rds-jgl740:host::",
+          "name": "PG_HOST"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-rds-jgl740:password::",
+          "name": "PG_PASSWORD"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-rds-jgl740:port::",
+          "name": "PG_PORT"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-rds-jgl740:username::",
+          "name": "PG_USER"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:PORT::",
+          "name": "PORT"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:S3_CDN::",
+          "name": "S3_CDN"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:STRIPE_APIKEY::",
+          "name": "STRIPE_APIKEY"
+        },
+        {
+          "valueFrom": "arn:aws:secretsmanager:ap-southeast-1:332371708913:secret:stage-rtb-secret-TMvA4x:WEB_APP_URL::",
+          "name": "WEB_APP_URL"
+        }
+      ],
+      "dockerSecurityOptions": null,
+      "memory": null,
+      "memoryReservation": null,
+      "volumesFrom": [],
+      "stopTimeout": null,
+      "image": "332371708913.dkr.ecr.ap-southeast-1.amazonaws.com/stage-rtb-backend",
+      "startTimeout": null,
+      "firelensConfiguration": null,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "interactive": null,
+      "healthCheck": null,
+      "essential": true,
+      "links": null,
+      "hostname": null,
+      "extraHosts": null,
+      "pseudoTerminal": null,
+      "user": null,
+      "readonlyRootFilesystem": null,
+      "dockerLabels": null,
+      "systemControls": null,
+      "privileged": null,
+      "name": "stage-rtb-backend"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "2048",
+  "taskRoleArn": "arn:aws:iam::332371708913:role/AmazonElasticContainerService",
+  "compatibilities": ["EC2", "FARGATE"],
+  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:332371708913:task-definition/stage-rtb-backend",
+  "family": "stage-rtb-backend",
+  "requiresAttributes": [
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.secrets.asm.environment-variables"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.task-eni"
+    }
+  ],
+  "pidMode": null,
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "1024",
+  "revision": 14,
+  "status": "ACTIVE",
+  "inferenceAccelerators": null,
+  "proxyConfiguration": null,
+  "volumes": []
+}
