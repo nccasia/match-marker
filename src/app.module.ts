@@ -12,6 +12,8 @@ import { LoggerService } from './middleware/logger/logger.service'
 import { MiddlewareModule } from './middleware/middleware.module'
 import { MongooseModule } from '@nestjs/mongoose'
 import { MatchMarkerModule } from './modules/matchmarker/matchmarker.module'
+import { PresenceModule } from './modules/presence/presence.module'
+import { RedisPresence } from './modules/presence/redis.presence'
 
 @Module({
   imports: [
@@ -20,6 +22,7 @@ import { MatchMarkerModule } from './modules/matchmarker/matchmarker.module'
       isGlobal: true,
       load: [baseEnv, authEnv, commonEnv, dbEnv],
     }),
+    PresenceModule.forRoot(new RedisPresence()),
     AuthModule,
     CommonModule,
     MiddlewareModule,
